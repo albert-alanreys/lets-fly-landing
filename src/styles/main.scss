@@ -1,0 +1,45 @@
+@import 'variables';
+
+html {
+	font-size: 18px;
+}
+
+body {
+	background-color: $color-bg;
+	color: $color-text;
+
+	font-family: $font-family;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.header {
+	padding: 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	.logo {
+		font-size: 2rem;
+		font-weight: 700;
+	}
+
+	.menu {
+		> ul {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+
+			> li > a {
+				font-weight: 500;
+				color: $color-muted;
+				transition: color 0.3s ease;
+
+				&:hover {
+					color: $color-text;
+				}
+			}
+		}
+	}
+}
