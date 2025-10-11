@@ -4,12 +4,12 @@
   justify-content: space-between;
   align-items: center;
 
-  .logo {
+  &__logo {
     font-size: 2rem;
     font-weight: 700;
   }
 
-  .menu {
+  &__menu {
     > ul {
       display: flex;
       align-items: center;
