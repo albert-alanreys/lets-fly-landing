@@ -21,6 +21,8 @@ body {
   overflow-x: hidden;
   max-width: 2560px;
   margin: 0 auto;
+
+  user-select: none;
 }
 
 button {
