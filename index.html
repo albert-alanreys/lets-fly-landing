@@ -6,11 +6,34 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
+    <meta
+      name="description"
+      content="Luxury and affordable personal jets."
+    />
+
+    <title>Private Jet</title>
+
     <link
       rel="icon"
       type="image/svg+xml"
       href="/favicon.svg"
     />
+
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       rel="stylesheet"
       href="/src/styles/preflight.css"
@@ -19,12 +42,11 @@
       rel="stylesheet"
       href="/src/styles/main.scss"
     />
-    <title>Private Jet</title>
   </head>
   <body>
     <div id="smooth-wrapper">
       <div id="smooth-content">
-        <header class="header container">
+        <header class="header container fade-in">
           <a
             href="/"
             class="header__logo"
@@ -42,10 +64,12 @@
           </nav>
         </header>
 
-        <section class="welcome">
-          <div class="welcome__information">
+        <main class="welcome">
+          <div
+            class="welcome__information zoom-in-fade-in will-change-transform"
+          >
             <div class="sub-title">Personal jets</div>
-            <h1 class="welcome__title fade-in">
+            <h1 class="welcome__title">
               <span>Luxury.</span>
               <span>Affordable.</span>
             </h1>
@@ -69,7 +93,7 @@
             <img src="/images/clouds/main-cloud.png" />
             <img src="/images/clouds/right-cloud.png" />
           </div>
-        </section>
+        </main>
 
         <section class="mission">
           <div>One simple fly rate.</div>
