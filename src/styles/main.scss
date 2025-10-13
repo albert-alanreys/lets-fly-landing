@@ -15,7 +15,8 @@ body {
   letter-spacing: 0.03em;
 
   overflow-x: hidden;
-  user-select: none;
+  max-width: 2560px;
+  margin: 0 auto;
 }
 
 button {
@@ -37,3 +38,4 @@ img {
 @import 'welcome';
 @import 'mission';
 @import 'section_ui';
+@import 'loyalty';

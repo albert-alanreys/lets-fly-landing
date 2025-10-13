@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Landing page project Let's Fly built with Vite and SCSS",
+  "description": "Landing page for the Let's Fly educational project",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
