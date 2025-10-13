@@ -2,6 +2,10 @@
 
 html {
   font-size: 18px;
+
+  @media (max-width: 1400px) {
+    font-size: 16px;
+  }
 }
 
 body {
@@ -41,3 +45,4 @@ img {
 @import 'loyalty';
 @import 'costs';
 @import 'apply';
+@import 'faq';
