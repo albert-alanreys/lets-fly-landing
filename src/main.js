@@ -76,7 +76,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
   gsap.from(welcome__plane, {
     x: -140,
     y: 50,
-    duration: 1.0,
+    duration: 1,
     ease: 'power3.ease',
     immediateRender: false,
   });
@@ -318,7 +318,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
   /* Costs */
 
   const costs = '.costs';
-  const costsPlane = '.costs__image';
+  const costsPlane = '.costs__plane';
 
   const costsBottomLeft = '.costs__bottom-left';
   const costsBottomRight = '.costs__bottom-right';

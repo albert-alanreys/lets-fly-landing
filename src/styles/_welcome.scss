@@ -54,7 +54,9 @@
     height: auto;
     margin-top: 0;
     z-index: 1;
-    margin-left: -88px;
+    margin-left: -5rem;
+    left: 50%;
+    transform: translateX(-50%);
 
     @media (max-height: 820px) and (min-width: 1600px) {
       bottom: -24rem;
@@ -88,17 +90,23 @@
     left: 0;
     z-index: 0;
 
-    > img {
+    .welcome__cloud {
       position: absolute;
 
-      &:nth-child(1) {
-        top: -10rem;
+      &.left-cloud {
+        top: -7rem;
         left: -5rem;
         width: 25vw;
 
+        @media (max-width: 1400px) {
+          top: -5rem;
+          left: -5rem;
+          width: 30vw;
+        }
+
         @media (max-width: 1200px) {
-          top: -11.5rem;
-          left: 7.5rem;
+          top: -5rem;
+          left: -5rem;
           width: 30vw;
         }
 
@@ -108,7 +116,7 @@
         }
       }
 
-      &:nth-child(2) {
+      &.main-cloud {
         top: 4rem;
         left: 49%;
         transform: translateX(-50%);
@@ -124,7 +132,7 @@
         }
       }
 
-      &:nth-child(3) {
+      &.right-cloud {
         top: 40rem;
         right: -10rem;
         width: 25vw;

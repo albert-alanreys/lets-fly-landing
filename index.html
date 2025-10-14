@@ -83,24 +83,59 @@
             </div>
           </div>
 
-          <img
-            src="/images/plane/06.png"
-            class="welcome__plane"
-          />
+          <picture>
+            <source
+              srcset="/images/plane/welcome-plane.webp"
+              type="image/webp"
+            />
+            <img
+              src="/images/plane/welcome-plane.png"
+              class="welcome__plane"
+              alt="Private jet flying over clouds"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </picture>
 
           <div class="welcome__bg-clouds">
-            <img
-              src="/images/clouds/left-cloud.png"
-              class="fade-in"
-            />
-            <img
-              src="/images/clouds/main-cloud.png"
-              class="fade-in"
-            />
-            <img
-              src="/images/clouds/right-cloud.png"
-              class="right-fade-in"
-            />
+            <picture>
+              <source
+                srcset="/images/clouds/left-cloud.webp"
+                type="image/webp"
+              />
+              <img
+                src="/images/clouds/left-cloud.png"
+                class="welcome__cloud left-cloud fade-in"
+                loading="eager"
+                alt="Cloud"
+              />
+            </picture>
+
+            <picture>
+              <source
+                srcset="/images/clouds/main-cloud.webp"
+                type="image/webp"
+              />
+              <img
+                src="/images/clouds/main-cloud.png"
+                class="welcome__cloud main-cloud fade-in"
+                loading="eager"
+                alt="Cloud"
+              />
+            </picture>
+
+            <picture>
+              <source
+                srcset="/images/clouds/right-cloud.webp"
+                type="image/webp"
+              />
+              <img
+                src="/images/clouds/right-cloud.png"
+                class="welcome__cloud right-cloud right-fade-in"
+                loading="eager"
+                alt="Cloud"
+              />
+            </picture>
           </div>
         </main>
 
@@ -128,14 +163,30 @@
             </div>
             <button class="btn btn--secondary">Book now</button>
           </div>
-          <img
-            src="/images/clouds/main-cloud.png"
-            class="luxury__cloud"
-          />
-          <img
-            src="/images/plane/05.png"
-            class="luxury__plane"
-          />
+
+          <picture>
+            <source
+              srcset="/images/clouds/main-cloud.webp"
+              type="image/webp"
+            />
+            <img
+              src="/images/clouds/main-cloud.png"
+              class="luxury__cloud"
+              alt="Cloud"
+            />
+          </picture>
+
+          <picture>
+            <source
+              srcset="/images/plane/luxury-plane.webp"
+              type="image/webp"
+            />
+            <img
+              src="/images/plane/luxury-plane.png"
+              class="luxury__plane"
+              alt="Private jet flying over clouds"
+            />
+          </picture>
         </section>
 
         <section class="loyalty">
@@ -147,14 +198,31 @@
                 Booked.
               </h2>
             </div>
-            <img
-              src="/images/plane/loalty-plane.png"
-              class="loyalty__plane"
-            />
-            <img
-              src="/images/clouds/right-cloud.png"
-              class="loyalty__cloud fade-in"
-            />
+
+            <picture>
+              <source
+                srcset="/images/plane/loyalty-plane.webp"
+                type="image/webp"
+              />
+              <img
+                src="/images/plane/loyalty-plane.png"
+                class="loyalty__plane"
+                alt="Private jet flying"
+              />
+            </picture>
+
+            <picture>
+              <source
+                srcset="/images/clouds/right-cloud.webp"
+                type="image/webp"
+              />
+              <img
+                src="/images/clouds/right-cloud.png"
+                class="loyalty__cloud fade-in"
+                alt="Cloud"
+              />
+            </picture>
+
             <div class="loyalty__bottom">
               <h3 class="section-bottom-title">Every. Single. Year.</h3>
               <div
@@ -176,10 +244,19 @@
           <div class="container">
             <div class="costs__sub-heading fade-in">Insanely Low</div>
             <h2 class="costs__heading fade-in">Costs.</h2>
-            <img
-              src="/images/plane/03.png"
-              class="costs__image"
-            />
+
+            <picture>
+              <source
+                srcset="/images/plane/costs-plane.webp"
+                type="image/webp"
+              />
+              <img
+                src="/images/plane/costs-plane.png"
+                class="costs__plane"
+                alt="Plane flying"
+              />
+            </picture>
+
             <div class="costs__bottom">
               <div class="costs__bottom-left">
                 <h3 class="section-bottom-title">Personal Discounts.</h3>
@@ -219,18 +296,33 @@
               <div class="apply__card apply__card--top">
                 <span class="apply__title"> Apply in minutes. </span>
                 <button class="btn btn--gray">Learn more</button>
-                <img
-                  src="/images/plane/apply.png"
-                  class="apply__first-plane non-select-image"
-                />
+
+                <picture>
+                  <source
+                    srcset="/images/plane/apply-plane-1.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="/images/plane/apply-plane-1.png"
+                    class="apply__first-plane non-select-image"
+                    alt="Tail of a private jet"
+                  />
+                </picture>
               </div>
 
               <div class="apply__row">
                 <div class="apply__card apply__card--left">
-                  <img
-                    src="/images/plane/apply-2.png"
-                    class="apply__second-plane non-select-image"
-                  />
+                  <picture>
+                    <source
+                      srcset="/images/plane/apply-plane-2.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      src="/images/plane/apply-plane-2.png"
+                      class="apply__second-plane non-select-image"
+                      alt="Turbine of a private jet plane"
+                    />
+                  </picture>
                   <div class="apply__title apply__title--light">
                     Backed by American's leading airlines.
                   </div>
@@ -243,8 +335,8 @@
                       Nice. How can I switch to Let's Fly?
                     </div>
                     <div class="apply__message apply__message--system">
-                      Tap the 'Refinance Now' button to get started. If you
-                      have any questions, I'm here to help.
+                      Tap the 'Refinance Now' button to get started. I'm here
+                      if you have questions.
                     </div>
                     <div class="apply__message apply__message--user">
                       👍 All done!
