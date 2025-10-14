@@ -11,6 +11,32 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
     smoothTouch: 0.1,
   });
 
+  const header = document.querySelector('.header');
+  ScrollTrigger.create({
+    start: 0,
+    end: 'max',
+    onUpdate: (self) => {
+      if (self.scroll() > 10) {
+        header.classList.add('header--scrolled');
+      } else {
+        header.classList.remove('header--scrolled');
+      }
+    },
+  });
+
+  document.querySelectorAll('.header__menu a').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').replace('#', '');
+      const target = document.getElementById(targetId);
+
+      if (target) {
+        const smoother = ScrollSmoother.get();
+        smoother.scrollTo(target, true);
+      }
+    });
+  });
+
   const fadeIn = '.fade-in';
   const rightFadeIn = '.right-fade-in';
   const zoomInFadeIn = '.zoom-in-fade-in';
@@ -109,7 +135,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
   /* Luxury */
 
   const luxury = '.luxury';
-  const luxuryPlane = '.luxury__image';
+  const luxuryPlane = '.luxury__plane';
 
   gsap.from(`${luxury} > .container`, {
     scale: 0.9,

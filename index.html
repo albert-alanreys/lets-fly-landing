@@ -11,7 +11,7 @@
       content="Luxury and affordable personal jets."
     />
 
-    <title>Private Jet</title>
+    <title>Personal jets</title>
 
     <link
       rel="icon"
@@ -43,27 +43,29 @@
       href="/src/styles/main.scss"
     />
   </head>
-  <body>
+  <body id="body">
+    <header class="header fade-in">
+      <div class="container">
+        <a
+          href="/"
+          class="header__logo non-select-image"
+        >
+          LetsFly
+        </a>
+        <nav class="header__menu">
+          <ul>
+            <li><a href="#body">Intro</a></li>
+            <li><a href="#luxury">About</a></li>
+            <li><a href="#costs">Costs</a></li>
+            <li><a href="#apply">Features</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
     <div id="smooth-wrapper">
       <div id="smooth-content">
-        <header class="header container fade-in">
-          <a
-            href="/"
-            class="header__logo"
-          >
-            Let's Fly
-          </a>
-          <nav class="header__menu">
-            <ul>
-              <li><a href="#">Intro</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Costs</a></li>
-              <li><a href="#">Features</a></li>
-              <li><a href="#">FAQ</a></li>
-            </ul>
-          </nav>
-        </header>
-
         <main class="welcome">
           <div class="welcome__information zoom-in-fade-in">
             <div class="sub-title">Personal jets</div>
@@ -76,7 +78,7 @@
             </div>
 
             <div class="welcome__cta">
-              <button class="btn btn--gray">Learn more</button>
+              <button class="btn btn--secondary">Learn more</button>
               <button class="btn btn--primary">Let's Fly</button>
             </div>
           </div>
@@ -109,7 +111,10 @@
           <div>Built for rich people.</div>
         </section>
 
-        <section class="luxury">
+        <section
+          class="luxury"
+          id="luxury"
+        >
           <div class="container">
             <div class="sub-title">EXPERIENCE OUR</div>
             <h2 class="section-title">
@@ -121,11 +126,15 @@
               top-tier comfort, personalized service, and exquisite amenities
               for every journey.
             </div>
-            <button class="btn btn--gray">Book now</button>
+            <button class="btn btn--secondary">Book now</button>
           </div>
           <img
+            src="/images/clouds/main-cloud.png"
+            class="luxury__cloud"
+          />
+          <img
             src="/images/plane/05.png"
-            class="luxury__image"
+            class="luxury__plane"
           />
         </section>
 
@@ -151,12 +160,15 @@
                 our luxury flight services.<br /><br />
                 We believe loyalty should be rewarded.
               </div>
-              <button class="btn">Get Started</button>
+              <button class="btn btn--secondary">Get Started</button>
             </div>
           </div>
         </section>
 
-        <section class="costs">
+        <section
+          class="costs"
+          id="costs"
+        >
           <div class="container">
             <div class="costs__sub-heading fade-in">Insanely Low</div>
             <h2 class="costs__heading fade-in">Costs.</h2>
@@ -175,8 +187,8 @@
                   discounts on our luxury private jet services.
                 </div>
                 <div class="costs__bottom-buttons">
-                  <button class="btn btn--gray">Learn more</button>
-                  <button class="btn">Get Started</button>
+                  <button class="btn btn--secondary">Learn more</button>
+                  <button class="btn btn--primary">Get Started</button>
                 </div>
               </div>
               <div class="costs__bottom-right">
@@ -190,7 +202,10 @@
           </div>
         </section>
 
-        <section class="apply">
+        <section
+          class="apply"
+          id="apply"
+        >
           <div class="apply__grid">
             <div class="apply__empty-wrapper">
               <div class="apply__empty"></div>
@@ -249,7 +264,10 @@
           </div>
         </section>
 
-        <section class="faq">
+        <section
+          class="faq"
+          id="faq"
+        >
           <div class="faq__container">
             <h2 class="faq__title">
               In case you<br />

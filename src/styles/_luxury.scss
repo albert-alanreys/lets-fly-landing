@@ -1,0 +1,21 @@
+.luxury {
+  position: relative;
+
+  &__cloud {
+    position: absolute;
+    top: 26rem;
+    right: -15rem;
+    user-select: none;
+    pointer-events: none;
+    z-index: 1;
+    transform: rotate(-8deg);
+  }
+
+  &__plane {
+    position: absolute;
+    right: 0;
+    bottom: -30rem;
+    max-width: 75%;
+    height: auto;
+  }
+}

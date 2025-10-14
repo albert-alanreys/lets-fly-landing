@@ -1,40 +1,73 @@
 @use 'variables' as *;
 
+$btn-bg-default: $color-block;
+$btn-bg-hover: #f1f1f1;
+
+$btn-primary-bg: #393847;
+$btn-primary-color: $color-block;
+$btn-primary-hover-bg: $color-text;
+
+$btn-gray-bg: $color-gray;
+$btn-gray-color: #32323a;
+
+$btn-premium-bg-start: #3a292b;
+$btn-premium-bg-end: #37292a;
+$btn-premium-border: rgba(255, 255, 255, 0.1);
+$btn-premium-border-hover: rgba(255, 255, 255, 0.2);
+
+$btn-secondary-bg: #fdfdfd;
+$btn-secondary-color: #3b3b3b;
+$btn-secondary-hover-bg: #f5f5f7;
+
 .btn {
   border-radius: 1.5rem;
-  background-color: $color-block;
+  background-color: $btn-bg-default;
   padding: 0.4rem 0.8rem;
   font-weight: 600;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.4s ease;
+  transition: background-color 0.4s ease, border-color 0.4s ease;
 
   &:hover {
-    background-color: #f1f1f1;
+    background-color: $btn-bg-hover;
   }
 
   &--primary {
-    background-color: #393847;
-    color: $color-block;
+    background-color: $btn-primary-bg;
+    color: $btn-primary-color;
     box-shadow: none;
 
     &:hover {
-      background-color: $color-text;
+      background-color: $btn-primary-hover-bg;
     }
   }
 
   &--gray {
-    background-color: $color-gray;
-    color: #32323a;
+    background-color: $btn-gray-bg;
+    color: $btn-gray-color;
     box-shadow: none;
   }
 
   &--premium {
-    background: linear-gradient(to top, #3a292b, #37292a);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: border-color 0.4s ease;
+    background: linear-gradient(
+      to top,
+      $btn-premium-bg-start,
+      $btn-premium-bg-end
+    );
+    border: 1px solid $btn-premium-border;
 
     &:hover {
-      border-color: rgba(255, 255, 255, 0.2);
+      border-color: $btn-premium-border-hover;
+    }
+  }
+
+  &--secondary {
+    background-color: $btn-secondary-bg;
+    color: $btn-secondary-color;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      background-color: $btn-secondary-hover-bg;
     }
   }
 }
