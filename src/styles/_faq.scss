@@ -14,11 +14,17 @@
     margin-bottom: 4rem;
     line-height: 1.1;
     text-align: center;
+
+    @media (max-width: 480px) {
+      font-size: 2rem;
+    }
   }
 
   &__item {
     display: grid;
     margin-bottom: 2rem;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
   }
 
   &__header {
@@ -44,6 +50,12 @@
     font-weight: 700;
     font-size: 1.25rem;
     text-align: left;
+    text-wrap: balance;
+
+    @media (max-width: 480px) {
+      font-size: 1rem;
+      padding-right: 2rem;
+    }
   }
 
   &__sign {
@@ -94,6 +106,7 @@
   &__answer {
     padding-top: 0.5rem;
     line-height: 1.6;
+    text-wrap: balance;
   }
 
   &__item:has(&__toggle:checked) {

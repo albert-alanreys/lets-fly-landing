@@ -1,6 +1,10 @@
 .loyalty {
   margin-top: 25rem;
 
+  @media (max-width: 1400px) {
+    margin-top: 15rem;
+  }
+
   > div {
     display: flex;
     flex-direction: column;
@@ -10,16 +14,47 @@
       max-width: max-content;
     }
 
-    .loyalty__image {
+    .loyalty__plane {
       position: absolute;
       left: -28rem;
       top: 24rem;
       max-width: 130%;
       height: auto;
+
+      @media (max-width: 1200px) {
+        top: 15rem;
+        left: -8rem;
+      }
+    }
+
+    .loyalty__cloud {
+      position: absolute;
+      top: 65rem;
+      right: -10rem;
+      width: 30vw;
+      transform: rotate(20deg);
+
+      @media (max-width: 1400px) {
+        top: 50rem;
+        right: -5rem;
+      }
+
+      @media (max-width: 1200px) {
+        top: 40rem;
+        right: -5rem;
+      }
     }
 
     .loyalty__bottom {
       margin-top: 30rem;
+
+      @media (max-width: 1400px) {
+        margin-top: 20rem;
+      }
+
+      @media (max-width: 1200px) {
+        margin-top: 13rem;
+      }
     }
   }
 }

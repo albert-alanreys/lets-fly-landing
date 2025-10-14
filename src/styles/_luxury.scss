@@ -3,19 +3,72 @@
 
   &__cloud {
     position: absolute;
-    top: 26rem;
+    top: 20rem;
     right: -15rem;
     user-select: none;
     pointer-events: none;
     z-index: 1;
-    transform: rotate(-8deg);
+    transform: rotate(0deg);
+
+    @media (max-width: 1400px) {
+      top: -5rem;
+      right: -22rem;
+    }
+
+    @media (max-width: 1200px) {
+      top: -3rem;
+      right: -30rem;
+    }
+
+    @media (max-width: 1000px) {
+      top: 2rem;
+      right: -30rem;
+    }
+
+    @media (max-width: 800px) {
+      top: 20rem;
+      right: -20rem;
+    }
+
+    @media (max-width: 600px) {
+      top: 23rem;
+      right: -10rem;
+    }
   }
 
   &__plane {
     position: absolute;
     right: 0;
-    bottom: -30rem;
+    bottom: -28rem;
     max-width: 75%;
     height: auto;
+
+    @media (max-width: 1400px) {
+      bottom: -10rem;
+      max-width: 100%;
+    }
+
+    @media (max-width: 1200px) {
+      bottom: -5rem;
+      right: -5rem;
+      max-width: 100%;
+    }
+
+    @media (max-width: 1000px) {
+      bottom: -5rem;
+      right: -5rem;
+      max-width: 100%;
+    }
+
+    @media (max-width: 800px) {
+      bottom: -20rem;
+      max-width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      bottom: -15rem;
+      right: 0rem;
+      max-width: 100%;
+    }
   }
 }

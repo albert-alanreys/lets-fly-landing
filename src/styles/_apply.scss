@@ -1,13 +1,41 @@
 @use 'variables' as *;
 
-$gap: 1.5rem;
-
 .apply {
+  @media (max-width: 1650px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
   &__grid {
     display: grid;
     grid-template-columns: 1fr 2.35fr 1fr;
     grid-template-rows: auto auto;
     gap: $gap;
+
+    @media (max-width: 1400px) {
+      grid-template-columns: 1fr 5.6fr 1fr;
+    }
+
+    @media (max-width: 1200px) {
+      grid-template-columns: 1fr 17.7fr 1fr;
+    }
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr 30fr 1fr;
+    }
+
+    @media (max-width: 768px) {
+      gap: $gap-small;
+    }
+
+    @media (max-width: 480px) {
+      display: flex;
+    }
   }
 
   &__empty-wrapper {
@@ -17,6 +45,20 @@ $gap: 1.5rem;
     height: 100%;
     align-self: stretch;
     grid-row: 1 / span 2;
+
+    @media (max-width: 768px) {
+      gap: $gap-small;
+    }
+    @media (max-width: 480px) {
+      display: none;
+      gap: $gap-xs;
+    }
+
+    &:last-child {
+      > div {
+        border-radius: 1rem 0 0 1rem;
+      }
+    }
   }
 
   &__empty {
@@ -32,6 +74,13 @@ $gap: 1.5rem;
     flex-direction: column;
     gap: $gap;
     align-self: stretch;
+
+    @media (max-width: 768px) {
+      gap: $gap-small;
+    }
+    @media (max-width: 480px) {
+      gap: $gap-xs;
+    }
   }
 
   &__first-plane {
@@ -40,6 +89,28 @@ $gap: 1.5rem;
     top: -2.5rem;
     max-width: 80%;
     height: auto;
+
+    @media (max-width: 1400px) {
+      max-width: 100%;
+      top: -5.35rem;
+      right: -10rem;
+    }
+
+    @media (max-width: 992px) {
+      top: -0.6rem;
+      right: -9rem;
+    }
+
+    @media (max-width: 768px) {
+      right: -14rem;
+      top: -0.7rem;
+      max-width: 125%;
+    }
+
+    @media (max-width: 480px) {
+      top: -3.7rem;
+      right: -12.5rem;
+    }
   }
 
   &__second-plane {
@@ -48,6 +119,11 @@ $gap: 1.5rem;
     top: -8rem;
     max-width: 130%;
     height: auto;
+
+    @media (max-width: 768px) {
+      top: -2rem;
+      left: -4rem;
+    }
   }
 
   &__card {
@@ -61,9 +137,29 @@ $gap: 1.5rem;
     gap: $gap;
     overflow: hidden;
 
+    @media (max-width: 768px) {
+      padding: 1rem;
+      gap: $gap-small;
+    }
+    @media (max-width: 480px) {
+      gap: $gap-xs;
+    }
+
     &--top {
       min-height: 25rem;
       justify-content: space-between;
+
+      @media (max-width: 992px) {
+        min-height: 27.2rem;
+      }
+
+      @media (max-width: 768px) {
+        min-height: 21rem;
+      }
+
+      @media (max-width: 480px) {
+        min-height: 14rem;
+      }
 
       > button {
         width: max-content;
@@ -78,6 +174,10 @@ $gap: 1.5rem;
       padding-top: 15rem;
       align-items: center;
 
+      @media (max-width: 768px) {
+        padding-top: 11rem;
+      }
+
       > button {
         width: max-content;
       }
@@ -89,6 +189,13 @@ $gap: 1.5rem;
       flex-direction: column;
       justify-content: space-between;
       gap: $gap;
+
+      @media (max-width: 768px) {
+        gap: $gap-small;
+      }
+      @media (max-width: 480px) {
+        gap: $gap-xs;
+      }
     }
   }
 
@@ -97,6 +204,10 @@ $gap: 1.5rem;
     grid-template-columns: 1fr 1fr;
     gap: $gap;
     width: 100%;
+
+    @media (max-width: 768px) {
+      gap: $gap-small;
+    }
   }
 
   &__title {
@@ -104,6 +215,14 @@ $gap: 1.5rem;
     font-weight: 600;
     color: #23233d;
     line-height: 1.2;
+
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1rem;
+    }
 
     &--light {
       color: #fff;
@@ -121,6 +240,11 @@ $gap: 1.5rem;
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
     max-width: 80%;
+
+    @media (max-width: 768px) {
+      font-size: 0.7rem;
+      padding: 0.5rem 0.7rem;
+    }
 
     &--user {
       background: #26a4ff;

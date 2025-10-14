@@ -1,36 +1,30 @@
-:root {
-  --color-bg: #eaebef;
-  --color-block: #fff;
-  --color-text: #3b3b3b;
-  --color-muted: #6e6f77;
-
-  --color-accent: #ff5c00;
-  --color-accent-hover: #e14c00;
-
-  --color-border: #d1d1d6;
-  --color-shadow: rgba(0, 0, 0, 0.05);
-  --color-overlay: rgba(0, 0, 0, 0.1);
-
-  --color-success: #34c759;
-  --color-error: #ff3b30;
-  --color-warning: #ffcc00;
-}
-
 $font-family: 'Manrope', sans-serif;
 
-$color-bg: var(--color-bg);
-$color-block: var(--color-block);
-$color-text: var(--color-text);
+$color-bg: #eaebef;
+$color-block: #fff;
+$color-text: #3b3b3b;
 $color-gray: #e9e9e9;
-$color-muted: var(--color-muted);
+$color-muted: #6e6f77;
 
-$color-accent: var(--color-accent);
-$color-accent-hover: var(--color-accent-hover);
+$btn-bg-default: $color-block;
+$btn-bg-hover: #f1f1f1;
 
-$color-border: var(--color-border);
-$color-shadow: var(--color-shadow);
-$color-overlay: var(--color-overlay);
+$btn-primary-bg: #393847;
+$btn-primary-color: $color-block;
+$btn-primary-hover-bg: $color-text;
 
-$color-success: var(--color-success);
-$color-error: var(--color-error);
-$color-warning: var(--color-warning);
+$btn-gray-bg: $color-gray;
+$btn-gray-color: #32323a;
+
+$btn-premium-bg-start: #3a292b;
+$btn-premium-bg-end: #37292a;
+$btn-premium-border: rgba(255, 255, 255, 0.1);
+$btn-premium-border-hover: rgba(255, 255, 255, 0.2);
+
+$btn-secondary-bg: #fdfdfd;
+$btn-secondary-color: #3b3b3b;
+$btn-secondary-hover-bg: #f5f5f7;
+
+$gap: 1.5rem;
+$gap-small: 1rem;
+$gap-xs: 0.8rem;

@@ -5,10 +5,22 @@
   align-items: center;
   min-height: 60vh;
 
+  @media (max-width: 480px) {
+    margin-top: 4rem;
+  }
+
   &__information {
     position: relative;
     z-index: 1;
     text-align: center;
+
+    @media (max-width: 1400px) {
+      width: 70%;
+    }
+
+    @media (max-width: 768px) {
+      width: 80%;
+    }
   }
 
   &__title {
@@ -17,6 +29,14 @@
     font-size: 7rem;
     font-weight: 600;
     line-height: 1;
+
+    @media (max-width: 768px) {
+      font-size: 5rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 4rem;
+    }
   }
 
   &__cta {
@@ -29,12 +49,35 @@
 
   &__plane {
     position: absolute;
-    bottom: -19rem;
+    bottom: -20rem;
     max-width: 65%;
     height: auto;
     margin-top: 0;
     z-index: 1;
     margin-left: -88px;
+
+    @media (max-height: 820px) and (min-width: 1600px) {
+      bottom: -24rem;
+    }
+
+    @media (max-width: 1400px) {
+      bottom: -20rem;
+      max-width: 100%;
+    }
+
+    @media (max-width: 1200px) {
+      bottom: -18rem;
+    }
+
+    @media (max-width: 768px) {
+      bottom: -14rem;
+      max-width: 140%;
+    }
+
+    @media (max-width: 480px) {
+      bottom: -10rem;
+      max-width: 145%;
+    }
   }
 
   &__bg-clouds {
@@ -49,9 +92,20 @@
       position: absolute;
 
       &:nth-child(1) {
-        top: -15rem;
-        left: 10rem;
+        top: -10rem;
+        left: -5rem;
         width: 25vw;
+
+        @media (max-width: 1200px) {
+          top: -11.5rem;
+          left: 7.5rem;
+          width: 30vw;
+        }
+
+        @media (max-width: 768px) {
+          top: -5rem;
+          left: 0rem;
+        }
       }
 
       &:nth-child(2) {
@@ -59,13 +113,31 @@
         left: 49%;
         transform: translateX(-50%);
         width: 60vw;
+
+        @media (max-width: 1200px) {
+          width: 80vw;
+          top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+          width: 95vw;
+        }
       }
 
       &:nth-child(3) {
-        top: -3rem;
+        top: 40rem;
         right: -10rem;
         width: 25vw;
         transform: rotate(10deg);
+
+        @media (max-width: 1200px) {
+          right: -7rem;
+        }
+
+        @media (max-width: 768px) {
+          right: -3rem;
+          top: -5rem;
+        }
       }
     }
   }

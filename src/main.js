@@ -135,6 +135,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
   /* Luxury */
 
   const luxury = '.luxury';
+  const luxuryCloud = '.luxury__cloud';
   const luxuryPlane = '.luxury__plane';
 
   gsap.from(`${luxury} > .container`, {
@@ -158,6 +159,26 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
         start: 'top 80%',
         end: '+=80%',
         scrub: true,
+      },
+    }
+  );
+
+  gsap.fromTo(
+    luxuryCloud,
+    {
+      scale: 0.97,
+      x: 80,
+    },
+    {
+      x: -50,
+      scale: 1.05,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: luxuryPlane,
+        start: 'top 65%',
+        end: '+=120%',
+        scrub: true,
+        immediateRender: false,
       },
     }
   );
@@ -193,7 +214,28 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
   /* Loyalty */
 
   const loyalty = '.loyalty';
-  const loyaltyPlane = '.loyalty__image';
+  const loyaltyCloud = '.loyalty__cloud';
+  const loyaltyPlane = '.loyalty__plane';
+
+  gsap.fromTo(
+    loyaltyCloud,
+    {
+      scale: 0.97,
+      x: 80,
+    },
+    {
+      x: -50,
+      scale: 1.05,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: loyaltyPlane,
+        start: 'top 65%',
+        end: '+=120%',
+        scrub: true,
+        immediateRender: false,
+      },
+    }
+  );
 
   gsap.from(`${loyalty} .loyalty__top`, {
     scale: 0.9,
