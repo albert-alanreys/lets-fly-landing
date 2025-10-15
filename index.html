@@ -8,15 +8,57 @@
     />
     <meta
       name="description"
-      content="Luxury and affordable personal jets."
+      content="Let's Fly offers luxury private jet services at affordable rates. Experience personalized discounts, instant booking, and unmatched comfort in the skies."
+    />
+    <meta
+      name="keywords"
+      content="private jets, luxury flights, personal jets, affordable private aviation, jet booking"
     />
 
-    <title>Personal jets</title>
+    <!-- Open Graph / Social Media -->
+    <meta
+      property="og:type"
+      content="website"
+    />
+    <meta
+      property="og:title"
+      content="Let's Fly - Luxury Personal Jets at Affordable Rates"
+    />
+    <meta
+      property="og:description"
+      content="Experience luxury private jet services with personalized discounts and instant booking. Apply in minutes."
+    />
+    <meta
+      property="og:image"
+      content="/images/plane/welcome-plane.png"
+    />
+
+    <!-- Twitter Card -->
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+    <meta
+      name="twitter:title"
+      content="Let's Fly - Luxury Personal Jets"
+    />
+    <meta
+      name="twitter:description"
+      content="Affordable luxury private jet services with exclusive discounts"
+    />
+
+    <title>
+      Let's Fly - Luxury Personal Jets at Affordable Rates | Private Aviation
+    </title>
 
     <link
       rel="icon"
       type="image/svg+xml"
       href="/favicon.svg"
+    />
+    <link
+      rel="canonical"
+      href="https://letsfly.com/"
     />
 
     <link
@@ -28,7 +70,6 @@
       href="https://fonts.gstatic.com"
       crossorigin
     />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
       rel="stylesheet"
@@ -44,16 +85,23 @@
     />
   </head>
   <body id="body">
-    <header class="header fade-in">
+    <header
+      class="header fade-in"
+      role="banner"
+    >
       <div class="container">
         <a
           href="/"
-          class="header__logo non-select-image"
+          class="header__logo"
+          aria-label="Let's Fly - Home"
         >
           LetsFly
         </a>
-        <nav class="header__menu">
-          <ul>
+        <nav
+          class="header__menu"
+          aria-label="Main navigation"
+        >
+          <ul role="list">
             <li><a href="#body">Intro</a></li>
             <li><a href="#luxury">About</a></li>
             <li><a href="#costs">Costs</a></li>
@@ -66,7 +114,10 @@
 
     <div id="smooth-wrapper">
       <div id="smooth-content">
-        <main class="welcome">
+        <main
+          class="welcome"
+          role="main"
+        >
           <div class="welcome__information zoom-in-fade-in">
             <div class="sub-title">Personal jets</div>
             <h1 class="welcome__title">
@@ -78,8 +129,18 @@
             </div>
 
             <div class="welcome__cta">
-              <button class="btn btn--secondary">Learn more</button>
-              <button class="btn btn--primary">Let's Fly</button>
+              <button
+                class="btn btn--secondary"
+                aria-label="Learn more about our services"
+              >
+                Learn more
+              </button>
+              <button
+                class="btn btn--primary"
+                aria-label="Start your journey with Let's Fly"
+              >
+                Let's Fly
+              </button>
             </div>
           </div>
 
@@ -91,7 +152,7 @@
             <img
               src="/images/plane/welcome-plane.png"
               class="welcome__plane"
-              alt="Private jet flying over clouds"
+              alt="Luxury private jet flying above fluffy white clouds against blue sky"
               loading="eager"
               fetchpriority="high"
             />
@@ -107,7 +168,7 @@
                 src="/images/clouds/left-cloud.png"
                 class="welcome__cloud left-cloud fade-in"
                 loading="eager"
-                alt="Cloud"
+                alt=""
               />
             </picture>
 
@@ -120,7 +181,7 @@
                 src="/images/clouds/main-cloud.png"
                 class="welcome__cloud main-cloud fade-in"
                 loading="eager"
-                alt="Cloud"
+                alt=""
               />
             </picture>
 
@@ -133,35 +194,48 @@
                 src="/images/clouds/right-cloud.png"
                 class="welcome__cloud right-cloud right-fade-in"
                 loading="eager"
-                alt="Cloud"
+                alt=""
               />
             </picture>
           </div>
         </main>
 
-        <section class="mission">
-          <div>One simple fly rate.</div>
-          <div>A discount that gets better and better.</div>
-          <div>Apply in minutes.</div>
-          <div>Built for rich people.</div>
+        <section
+          class="mission"
+          aria-label="Our mission highlights"
+        >
+          <ul role="list">
+            <li>One simple fly rate</li>
+            <li>A discount that gets better and better</li>
+            <li>Apply in minutes</li>
+            <li>Built for rich people</li>
+          </ul>
         </section>
 
         <section
           class="luxury"
           id="luxury"
+          aria-labelledby="luxury-title"
         >
           <div class="container">
             <div class="sub-title">EXPERIENCE OUR</div>
-            <h2 class="section-title">
-              <div>Luxury</div>
-              Flights.
+            <h2
+              class="section-title"
+              id="luxury-title"
+            >
+              <span class="section-title__highlight">Luxury</span>
+              <span class="section-title__main">Flights</span>
             </h2>
             <div class="description section__description">
-              Experience unmatched luxury in the skies. Our private jets offer
-              top-tier comfort, personalized service, and exquisite amenities
-              for every journey.
+              Experience luxury redefined. Enjoy top-tier comfort and
+              personalized service in every flight.
             </div>
-            <button class="btn btn--secondary">Book now</button>
+            <button
+              class="btn btn--secondary"
+              aria-label="Book your luxury flight now"
+            >
+              Book now
+            </button>
           </div>
 
           <picture>
@@ -172,7 +246,8 @@
             <img
               src="/images/clouds/main-cloud.png"
               class="luxury__cloud"
-              alt="Cloud"
+              alt=""
+              loading="lazy"
             />
           </picture>
 
@@ -184,18 +259,25 @@
             <img
               src="/images/plane/luxury-plane.png"
               class="luxury__plane"
-              alt="Private jet flying over clouds"
+              alt="Sleek luxury private jet soaring through clouds"
+              loading="lazy"
             />
           </picture>
         </section>
 
-        <section class="loyalty">
+        <section
+          class="loyalty"
+          aria-labelledby="loyalty-title"
+        >
           <div class="container">
             <div class="loyalty__top">
               <div class="sub-title">SEAMLESSLY</div>
-              <h2 class="section-title">
-                <div>Instantly</div>
-                Booked.
+              <h2
+                class="section-title"
+                id="loyalty-title"
+              >
+                <span class="section-title__highlight">Instantly</span>
+                <span class="section-title__main">Booked.</span>
               </h2>
             </div>
 
@@ -207,7 +289,8 @@
               <img
                 src="/images/plane/loyalty-plane.png"
                 class="loyalty__plane"
-                alt="Private jet flying"
+                alt="Private jet in flight demonstrating our instant booking service"
+                loading="lazy"
               />
             </picture>
 
@@ -219,7 +302,8 @@
               <img
                 src="/images/clouds/right-cloud.png"
                 class="loyalty__cloud fade-in"
-                alt="Cloud"
+                alt=""
+                loading="lazy"
               />
             </picture>
 
@@ -232,7 +316,12 @@
                 our luxury flight services.<br /><br />
                 We believe loyalty should be rewarded.
               </div>
-              <button class="btn btn--secondary">Get Started</button>
+              <button
+                class="btn btn--secondary"
+                aria-label="Get started with Let's Fly"
+              >
+                Get Started
+              </button>
             </div>
           </div>
         </section>
@@ -240,10 +329,16 @@
         <section
           class="costs"
           id="costs"
+          aria-labelledby="costs-title"
         >
           <div class="container">
             <div class="costs__sub-heading fade-in">Insanely Low</div>
-            <h2 class="costs__heading fade-in">Costs.</h2>
+            <h2
+              class="costs__heading fade-in"
+              id="costs-title"
+            >
+              Costs
+            </h2>
 
             <picture>
               <source
@@ -253,13 +348,14 @@
               <img
                 src="/images/plane/costs-plane.png"
                 class="costs__plane"
-                alt="Plane flying"
+                alt="Private jet showcasing our affordable pricing"
+                loading="lazy"
               />
             </picture>
 
             <div class="costs__bottom">
               <div class="costs__bottom-left">
-                <h3 class="section-bottom-title">Personal Discounts.</h3>
+                <h3 class="section-bottom-title">Personal Discounts</h3>
                 <div
                   class="costs__bottom-description section-bottom-description description section__description"
                 >
@@ -267,13 +363,27 @@
                   discounts on our luxury private jet services.
                 </div>
                 <div class="costs__bottom-buttons">
-                  <button class="btn btn--secondary">Learn more</button>
-                  <button class="btn btn--primary">Get Started</button>
+                  <button
+                    class="btn btn--secondary"
+                    aria-label="Learn more about our costs"
+                  >
+                    Learn more
+                  </button>
+                  <button
+                    class="btn btn--primary"
+                    aria-label="Get started with personalized discounts"
+                  >
+                    Get Started
+                  </button>
                 </div>
               </div>
-              <div class="costs__bottom-right">
+              <div
+                class="costs__bottom-right"
+                role="region"
+                aria-label="Interest rate information"
+              >
                 <div>
-                  <div>5.25</div>
+                  <div aria-label="5.25 percent per annum">5.25</div>
                   <div><span>%</span><span>PA</span></div>
                 </div>
                 <div>Estimated Rate*</div>
@@ -285,6 +395,7 @@
         <section
           class="apply"
           id="apply"
+          aria-labelledby="apply-title"
         >
           <div class="apply__grid">
             <div class="apply__empty-wrapper">
@@ -294,8 +405,12 @@
 
             <div class="apply__main">
               <div class="apply__card apply__card--top">
-                <span class="apply__title"> Apply in minutes. </span>
-                <button class="btn btn--gray">Learn more</button>
+                <h3
+                  class="apply__title"
+                  id="apply-title"
+                >
+                  Apply in minutes
+                </h3>
 
                 <picture>
                   <source
@@ -304,8 +419,9 @@
                   />
                   <img
                     src="/images/plane/apply-plane-1.png"
-                    class="apply__first-plane non-select-image"
-                    alt="Tail of a private jet"
+                    class="apply__first-plane"
+                    alt="Tail section of a luxury private jet"
+                    loading="lazy"
                   />
                 </picture>
               </div>
@@ -319,26 +435,45 @@
                     />
                     <img
                       src="/images/plane/apply-plane-2.png"
-                      class="apply__second-plane non-select-image"
-                      alt="Turbine of a private jet plane"
+                      class="apply__second-plane"
+                      alt="Turbine engine of a private jet"
+                      loading="lazy"
                     />
                   </picture>
                   <div class="apply__title apply__title--light">
-                    Backed by American's leading airlines.
+                    Backed by American's leading airlines
                   </div>
-                  <button class="btn btn--premium">Learn more</button>
+                  <button
+                    class="btn btn--premium"
+                    aria-label="Learn more about our airline partners"
+                  >
+                    Learn more
+                  </button>
                 </div>
 
                 <div class="apply__card apply__card--right">
-                  <div class="apply__chat">
-                    <div class="apply__message apply__message--user">
+                  <div
+                    class="apply__chat"
+                    role="region"
+                    aria-label="Customer support chat example"
+                  >
+                    <div
+                      class="apply__message apply__message--user"
+                      role="article"
+                    >
                       Nice. How can I switch to Let's Fly?
                     </div>
-                    <div class="apply__message apply__message--system">
+                    <div
+                      class="apply__message apply__message--system"
+                      role="article"
+                    >
                       Tap the 'Refinance Now' button to get started. I'm here
                       if you have questions.
                     </div>
-                    <div class="apply__message apply__message--user">
+                    <div
+                      class="apply__message apply__message--user"
+                      role="article"
+                    >
                       👍 All done!
                     </div>
                   </div>
@@ -346,7 +481,12 @@
                     <div class="apply__title">
                       Got a question?<br />We're here to help.
                     </div>
-                    <button class="btn btn--gray">Chat with us</button>
+                    <button
+                      class="btn btn--gray"
+                      aria-label="Start a chat with our support team"
+                    >
+                      Chat with us
+                    </button>
                   </div>
                 </div>
               </div>
@@ -362,15 +502,22 @@
         <section
           class="faq"
           id="faq"
+          aria-labelledby="faq-title"
         >
           <div class="faq__container">
-            <h2 class="faq__title">
+            <h2
+              class="faq__title"
+              id="faq-title"
+            >
               In case you<br />
-              missed anything.
+              missed anything
             </h2>
 
-            <div>
-              <div class="faq__item">
+            <div role="list">
+              <div
+                class="faq__item"
+                role="listitem"
+              >
                 <div class="faq__header">
                   <input
                     type="checkbox"
@@ -388,7 +535,10 @@
                 </div>
               </div>
 
-              <div class="faq__item">
+              <div
+                class="faq__item"
+                role="listitem"
+              >
                 <div class="faq__header">
                   <input
                     type="checkbox"
@@ -409,7 +559,10 @@
                 </div>
               </div>
 
-              <div class="faq__item">
+              <div
+                class="faq__item"
+                role="listitem"
+              >
                 <div class="faq__header">
                   <input
                     type="checkbox"
@@ -430,7 +583,10 @@
                 </div>
               </div>
 
-              <div class="faq__item">
+              <div
+                class="faq__item"
+                role="listitem"
+              >
                 <div class="faq__header">
                   <input
                     type="checkbox"
@@ -451,7 +607,10 @@
                 </div>
               </div>
 
-              <div class="faq__item">
+              <div
+                class="faq__item"
+                role="listitem"
+              >
                 <div class="faq__header">
                   <input
                     type="checkbox"
@@ -472,7 +631,10 @@
                 </div>
               </div>
 
-              <div class="faq__item">
+              <div
+                class="faq__item"
+                role="listitem"
+              >
                 <div class="faq__header">
                   <input
                     type="checkbox"
@@ -492,7 +654,10 @@
                 </div>
               </div>
 
-              <div class="faq__item">
+              <div
+                class="faq__item"
+                role="listitem"
+              >
                 <div class="faq__header">
                   <input
                     type="checkbox"
@@ -514,7 +679,10 @@
                 </div>
               </div>
 
-              <div class="faq__item">
+              <div
+                class="faq__item"
+                role="listitem"
+              >
                 <div class="faq__header">
                   <input
                     type="checkbox"

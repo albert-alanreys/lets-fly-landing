@@ -3,7 +3,7 @@
 
   &__cloud {
     position: absolute;
-    top: 20rem;
+    top: 16rem;
     right: -20rem;
     user-select: none;
     pointer-events: none;
@@ -11,28 +11,28 @@
     transform: rotate(0deg);
 
     @media (max-width: 1400px) {
-      top: 10rem;
+      top: 8rem;
       right: -25rem;
     }
 
     @media (max-width: 1200px) {
-      top: 20rem;
+      top: 15rem;
       right: -32rem;
     }
 
     @media (max-width: 1000px) {
-      top: 20rem;
+      top: 18rem;
       right: -25rem;
     }
 
     @media (max-width: 800px) {
-      top: 15rem;
+      top: 13rem;
       right: -25rem;
     }
 
     @media (max-width: 600px) {
-      top: 25rem;
-      right: -12rem;
+      top: 22rem;
+      right: -10rem;
     }
   }
 

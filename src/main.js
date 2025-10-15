@@ -99,7 +99,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
   /* Mission section */
   const mission = '.mission';
 
-  gsap.utils.toArray(`${mission} > div`).forEach((item) => {
+  gsap.utils.toArray(`${mission} li`).forEach((item) => {
     gsap.fromTo(
       item,
       { y: 25, scale: 0.7, opacity: 0 },

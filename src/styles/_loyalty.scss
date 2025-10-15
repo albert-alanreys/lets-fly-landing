@@ -17,8 +17,8 @@
     .loyalty__plane {
       position: absolute;
       left: -40rem;
-      top: 24rem;
-      max-width: 130%;
+      top: 18rem;
+      max-width: 120%;
       height: auto;
 
       @media (max-width: 1400px) {
@@ -38,7 +38,7 @@
 
       @media (max-width: 600px) {
         left: -20rem;
-        top: 15rem;
+        top: 17rem;
       }
     }
 
