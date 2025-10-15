@@ -64,7 +64,7 @@
 
     @media (max-width: 1400px) {
       bottom: -20rem;
-      max-width: 100%;
+      max-width: 90%;
     }
 
     @media (max-width: 1200px) {
@@ -72,13 +72,13 @@
     }
 
     @media (max-width: 768px) {
-      bottom: -14rem;
-      max-width: 140%;
+      bottom: -15rem;
+      max-width: 120%;
     }
 
     @media (max-width: 480px) {
       bottom: -10rem;
-      max-width: 145%;
+      max-width: 160%;
     }
   }
 
@@ -114,21 +114,33 @@
           top: -5rem;
           left: 0rem;
         }
+
+        @media (max-width: 480px) {
+          top: -5rem;
+          left: -2rem;
+        }
       }
 
       &.main-cloud {
         top: 4rem;
         left: 49%;
         transform: translateX(-50%);
-        width: 60vw;
 
         @media (max-width: 1200px) {
           width: 80vw;
-          top: 2rem;
+          top: 4rem;
         }
 
         @media (max-width: 768px) {
-          width: 95vw;
+          width: 90vw;
+          top: 8rem;
+          left: 25rem;
+        }
+
+        @media (max-width: 480px) {
+          width: 100vw;
+          top: 8rem;
+          left: 13rem;
         }
       }
 
@@ -139,12 +151,11 @@
         transform: rotate(10deg);
 
         @media (max-width: 1200px) {
-          right: -7rem;
+          right: -5rem;
         }
 
         @media (max-width: 768px) {
-          right: -3rem;
-          top: -5rem;
+          right: -2rem;
         }
       }
     }

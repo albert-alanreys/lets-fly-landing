@@ -56,10 +56,11 @@
 
     .costs__plane {
       position: absolute;
-      left: 2rem;
+      left: 5rem;
       top: 15rem;
       max-width: 110%;
       height: auto;
+      z-index: 1;
 
       @media (max-width: 1400px) {
         top: 20rem;
@@ -67,7 +68,6 @@
 
       @media (max-width: 1200px) {
         top: 15rem;
-        z-index: 1;
       }
 
       @media (max-width: 768px) {

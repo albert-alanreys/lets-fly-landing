@@ -49,6 +49,7 @@
     @media (max-width: 768px) {
       gap: $gap-small;
     }
+
     @media (max-width: 480px) {
       display: none;
       gap: $gap-xs;
@@ -64,7 +65,7 @@
   &__empty {
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
     background-color: #ececf0;
-    border-radius: 1rem;
+    border-radius: 0 1rem 1rem 0;
     height: 100%;
   }
 
@@ -78,6 +79,7 @@
     @media (max-width: 768px) {
       gap: $gap-small;
     }
+
     @media (max-width: 480px) {
       gap: $gap-xs;
     }
@@ -141,12 +143,13 @@
       padding: 1rem;
       gap: $gap-small;
     }
+
     @media (max-width: 480px) {
       gap: $gap-xs;
     }
 
     &--top {
-      min-height: 25rem;
+      min-height: 26.5rem;
       justify-content: space-between;
 
       @media (max-width: 992px) {
@@ -193,6 +196,7 @@
       @media (max-width: 768px) {
         gap: $gap-small;
       }
+
       @media (max-width: 480px) {
         gap: $gap-xs;
       }
@@ -252,6 +256,7 @@
       align-self: end;
       margin-bottom: 0.3rem;
     }
+
     &--system {
       background: $color-gray;
       color: #23233d;

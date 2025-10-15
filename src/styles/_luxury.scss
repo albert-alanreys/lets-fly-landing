@@ -4,35 +4,35 @@
   &__cloud {
     position: absolute;
     top: 20rem;
-    right: -15rem;
+    right: -20rem;
     user-select: none;
     pointer-events: none;
     z-index: 1;
     transform: rotate(0deg);
 
     @media (max-width: 1400px) {
-      top: -5rem;
-      right: -22rem;
+      top: 10rem;
+      right: -25rem;
     }
 
     @media (max-width: 1200px) {
-      top: -3rem;
-      right: -30rem;
+      top: 20rem;
+      right: -32rem;
     }
 
     @media (max-width: 1000px) {
-      top: 2rem;
-      right: -30rem;
+      top: 20rem;
+      right: -25rem;
     }
 
     @media (max-width: 800px) {
-      top: 20rem;
-      right: -20rem;
+      top: 15rem;
+      right: -25rem;
     }
 
     @media (max-width: 600px) {
-      top: 23rem;
-      right: -10rem;
+      top: 25rem;
+      right: -12rem;
     }
   }
 
@@ -44,19 +44,19 @@
     height: auto;
 
     @media (max-width: 1400px) {
-      bottom: -10rem;
+      bottom: -22rem;
+      right: -2rem;
       max-width: 100%;
     }
 
     @media (max-width: 1200px) {
-      bottom: -5rem;
-      right: -5rem;
+      bottom: -22rem;
+      right: -2rem;
       max-width: 100%;
     }
 
     @media (max-width: 1000px) {
-      bottom: -5rem;
-      right: -5rem;
+      bottom: -20rem;
       max-width: 100%;
     }
 
@@ -66,7 +66,7 @@
     }
 
     @media (max-width: 600px) {
-      bottom: -15rem;
+      bottom: -16rem;
       right: 0rem;
       max-width: 100%;
     }

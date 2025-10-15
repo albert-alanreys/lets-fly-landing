@@ -6,44 +6,45 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 (function initScrollAnimations() {
   ScrollSmoother.create({
-    smooth: 1,
-    effects: false,
-    smoothTouch: 0.1,
+    smooth: 1.2,
+    effects: true,
+    smoothTouch: 0.25,
+    normalizeScroll: true,
+    ignoreMobileResize: true,
+    speed: 1,
+    ease: 'power1.out',
   });
 
+  document.querySelectorAll('img').forEach((img) => {
+    img.addEventListener('load', () => ScrollTrigger.refresh(), {
+      once: true,
+    });
+  });
+
+  ScrollTrigger.normalizeScroll(true);
+
+  /* Add bg header when start scroll */
   const header = document.querySelector('.header');
   ScrollTrigger.create({
     start: 0,
     end: 'max',
     onUpdate: (self) => {
-      if (self.scroll() > 10) {
-        header.classList.add('header--scrolled');
-      } else {
-        header.classList.remove('header--scrolled');
-      }
+      header.classList.toggle('header--scrolled', self.scroll() > 10);
     },
   });
 
+  /* Anchors */
   document.querySelectorAll('.header__menu a').forEach((link) => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const targetId = link.getAttribute('href').replace('#', '');
       const target = document.getElementById(targetId);
-
-      if (target) {
-        const smoother = ScrollSmoother.get();
-        smoother.scrollTo(target, true);
-      }
+      if (target) ScrollSmoother.get().scrollTo(target, true);
     });
   });
 
-  const fadeIn = '.fade-in';
-  const rightFadeIn = '.right-fade-in';
-  const zoomInFadeIn = '.zoom-in-fade-in';
-
   /* Global */
-
-  gsap.from(fadeIn, {
+  gsap.from('.fade-in', {
     y: -25,
     opacity: 0,
     duration: 1,
@@ -51,7 +52,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
     ease: 'power2.ease',
   });
 
-  gsap.from(rightFadeIn, {
+  gsap.from('.right-fade-in', {
     x: 25,
     opacity: 0,
     duration: 1,
@@ -59,12 +60,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
     ease: 'power2.ease',
   });
 
-  /* Welcome section */
-
-  const welcome = '.welcome';
-  const welcome__plane = '.welcome__plane';
-
-  gsap.from(zoomInFadeIn, {
+  gsap.from('.zoom-in-fade-in', {
     scale: 0.8,
     opacity: 0,
     duration: 0.8,
@@ -73,17 +69,23 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
     immediateRender: false,
   });
 
-  gsap.from(welcome__plane, {
-    x: -140,
+  /* Welcome section */
+  const welcomePlane = '.welcome__plane';
+
+  gsap.set(welcomePlane, { xPercent: -50, x: -5 * 12 });
+
+  gsap.from(welcomePlane, {
+    x: -140 - 5 * 12,
     y: 50,
     duration: 1,
     ease: 'power3.ease',
     immediateRender: false,
   });
 
+  // Scroll animation
   const welcomeTl = gsap.timeline({
     scrollTrigger: {
-      trigger: welcome,
+      trigger: '.welcome',
       start: 'top top',
       end: '+=120%',
       scrub: true,
@@ -91,29 +93,13 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
   });
 
   welcomeTl
-    .to(
-      zoomInFadeIn,
-      {
-        scale: 0.8,
-        opacity: 0,
-        ease: 'none',
-      },
-      0
-    )
-    .to(
-      welcome__plane,
-      {
-        x: 140,
-        y: -50,
-      },
-      0
-    );
+    .to('.zoom-in-fade-in', { scale: 0.8, opacity: 0, ease: 'none' }, 0)
+    .to(welcomePlane, { x: 250, y: -50 }, 0);
 
   /* Mission section */
-
   const mission = '.mission';
 
-  gsap.utils.toArray(`${mission} > div`).forEach((item, index) => {
+  gsap.utils.toArray(`${mission} > div`).forEach((item) => {
     gsap.fromTo(
       item,
       { y: 25, scale: 0.7, opacity: 0 },
@@ -125,29 +111,17 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
         scrollTrigger: {
           trigger: item,
           start: 'top 95%',
-          end: 'top 45%',
+          end: 'bottom 55%',
           scrub: true,
+          immediateRender: false,
         },
       }
     );
   });
 
   /* Luxury */
-
-  const luxury = '.luxury';
-  const luxuryCloud = '.luxury__cloud';
-  const luxuryPlane = '.luxury__plane';
-
-  gsap.from(`${luxury} > .container`, {
-    scale: 0.9,
-    opacity: 0,
-    x: -100,
-    duration: 1,
-    ease: 'power2.ease',
-  });
-
   gsap.fromTo(
-    `${luxury} > .container`,
+    '#luxury > .container',
     { scale: 0.9, opacity: 0, x: -100 },
     {
       scale: 1,
@@ -155,16 +129,35 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
       x: -10,
       ease: 'none',
       scrollTrigger: {
-        trigger: luxury,
+        trigger: '#luxury',
         start: 'top 80%',
-        end: '+=80%',
+        end: '+=70%',
         scrub: true,
+        immediateRender: false,
       },
     }
   );
 
   gsap.fromTo(
-    luxuryCloud,
+    '.luxury__plane',
+    { scale: 0.9, x: 150, opacity: 0.7 },
+    {
+      x: -300,
+      scale: 1.2,
+      opacity: 1,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.luxury__plane',
+        start: 'top 75%',
+        end: '+=150%',
+        scrub: true,
+        immediateRender: false,
+      },
+    }
+  );
+
+  gsap.fromTo(
+    '.luxury__cloud',
     {
       scale: 0.97,
       x: 80,
@@ -174,36 +167,8 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
       scale: 1.05,
       ease: 'none',
       scrollTrigger: {
-        trigger: luxuryPlane,
-        start: 'top 65%',
-        end: '+=120%',
-        scrub: true,
-        immediateRender: false,
-      },
-    }
-  );
-
-  gsap.from(luxuryPlane, {
-    scale: 0.9,
-    opacity: 0,
-    x: 150,
-    duration: 1.5,
-    ease: 'power3.ease',
-  });
-
-  gsap.fromTo(
-    luxuryPlane,
-    {
-      scale: 0.9,
-      x: 150,
-    },
-    {
-      x: -300,
-      scale: 1.2,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: luxuryPlane,
-        start: 'top 65%',
+        trigger: '.luxury__plane',
+        start: 'top 75%',
         end: '+=120%',
         scrub: true,
         immediateRender: false,
@@ -212,13 +177,61 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
   );
 
   /* Loyalty */
-
-  const loyalty = '.loyalty';
-  const loyaltyCloud = '.loyalty__cloud';
-  const loyaltyPlane = '.loyalty__plane';
+  gsap.fromTo(
+    '.loyalty .loyalty__top',
+    { scale: 0.9, opacity: 0, x: 100 },
+    {
+      scale: 1,
+      opacity: 1,
+      x: 10,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.loyalty',
+        start: 'top 80%',
+        end: '+=80%',
+        scrub: true,
+        immediateRender: false,
+      },
+    }
+  );
 
   gsap.fromTo(
-    loyaltyCloud,
+    '.loyalty .loyalty__bottom',
+    { scale: 0.9, opacity: 0, x: -100 },
+    {
+      scale: 1,
+      opacity: 1,
+      x: -10,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.loyalty .loyalty__bottom',
+        start: 'top bottom',
+        end: 'top center',
+        scrub: true,
+        immediateRender: false,
+      },
+    }
+  );
+
+  gsap.fromTo(
+    '.loyalty__plane',
+    { scale: 0.9, x: -100 },
+    {
+      x: 250,
+      scale: 1.2,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.loyalty__plane',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true,
+        immediateRender: false,
+      },
+    }
+  );
+
+  gsap.fromTo(
+    '.loyalty__cloud',
     {
       scale: 0.97,
       x: 80,
@@ -228,85 +241,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
       scale: 1.05,
       ease: 'none',
       scrollTrigger: {
-        trigger: loyaltyPlane,
-        start: 'top 65%',
-        end: '+=120%',
-        scrub: true,
-        immediateRender: false,
-      },
-    }
-  );
-
-  gsap.from(`${loyalty} .loyalty__top`, {
-    scale: 0.9,
-    opacity: 0,
-    x: 100,
-    duration: 1,
-    ease: 'power2.ease',
-  });
-
-  gsap.fromTo(
-    `${loyalty} .loyalty__top`,
-    { scale: 0.9, opacity: 0, x: 100 },
-    {
-      scale: 1,
-      opacity: 1,
-      x: 10,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: loyalty,
-        start: 'top 80%',
-        end: '+=80%',
-        scrub: true,
-      },
-    }
-  );
-
-  gsap.from(`${loyalty} .loyalty__bottom`, {
-    scale: 0.9,
-    opacity: 0,
-    x: -100,
-    duration: 1,
-    ease: 'power2.ease',
-  });
-
-  gsap.fromTo(
-    `${loyalty} .loyalty__bottom`,
-    { scale: 0.9, opacity: 0, x: -100 },
-    {
-      scale: 1,
-      opacity: 1,
-      x: -10,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: `${loyalty} .loyalty__bottom`,
-        start: 'top 82%',
-        end: 'top 22%',
-        scrub: true,
-      },
-    }
-  );
-
-  gsap.from(loyaltyPlane, {
-    scale: 0.9,
-    opacity: 0,
-    x: -100,
-    duration: 1.5,
-    ease: 'power3.ease',
-  });
-
-  gsap.fromTo(
-    loyaltyPlane,
-    {
-      scale: 0.9,
-      x: -100,
-    },
-    {
-      x: 200,
-      scale: 1.2,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: loyaltyPlane,
+        trigger: '.loyalty__plane',
         start: 'top 65%',
         end: '+=120%',
         scrub: true,
@@ -316,23 +251,8 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
   );
 
   /* Costs */
-
-  const costs = '.costs';
-  const costsPlane = '.costs__plane';
-
-  const costsBottomLeft = '.costs__bottom-left';
-  const costsBottomRight = '.costs__bottom-right';
-
-  gsap.from(`${costs} ${costsBottomRight}`, {
-    scale: 0.9,
-    opacity: 0,
-    x: 100,
-    duration: 1,
-    ease: 'power2.ease',
-  });
-
   gsap.fromTo(
-    `${costs} ${costsBottomRight}`,
+    '.costs__bottom-right',
     { scale: 0.9, opacity: 0, x: 100 },
     {
       scale: 1,
@@ -340,24 +260,17 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
       x: 10,
       ease: 'none',
       scrollTrigger: {
-        trigger: `${costs} ${costsBottomRight}`,
-        start: 'top 82%',
-        end: 'top 22%',
+        trigger: '.costs__bottom-right',
+        start: 'top 85%',
+        end: 'top 45%',
         scrub: true,
+        immediateRender: false,
       },
     }
   );
 
-  gsap.from(`${costs} ${costsBottomLeft}`, {
-    scale: 0.9,
-    opacity: 0,
-    x: -100,
-    duration: 1,
-    ease: 'power2.ease',
-  });
-
   gsap.fromTo(
-    `${costs} ${costsBottomLeft}`,
+    '.costs__bottom-left',
     { scale: 0.9, opacity: 0, x: -100 },
     {
       scale: 1,
@@ -365,39 +278,27 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
       x: -10,
       ease: 'power2.out',
       scrollTrigger: {
-        trigger: `${costs} ${costsBottomLeft}`,
-        start: 'top 82%',
-        end: 'top 22%',
+        trigger: '.costs__bottom-left',
+        start: 'top 85%',
+        end: 'top 45%',
         scrub: true,
+        immediateRender: false,
       },
     }
   );
 
-  gsap.from(costsPlane, {
-    scale: 0.9,
-    opacity: 0,
-    x: -150,
-    y: -50,
-    duration: 1.5,
-    ease: 'power3.ease',
-  });
-
   gsap.fromTo(
-    costsPlane,
-    {
-      scale: 0.9,
-      x: -100,
-      y: -50,
-    },
+    '.costs__plane',
+    { scale: 0.9, x: -450, y: -50 },
     {
       x: 150,
       y: 50,
       scale: 1.05,
       ease: 'none',
       scrollTrigger: {
-        trigger: costsPlane,
-        start: 'top 65%',
-        end: '+=175%',
+        trigger: '.costs__plane',
+        start: 'top bottom',
+        end: 'bottom top',
         scrub: true,
         immediateRender: false,
       },
@@ -405,11 +306,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
   );
 
   /* Apply section */
-
-  const applyEmpty = '.apply__empty';
-  const applyCard = '.apply__card';
-
-  gsap.utils.toArray(`${applyEmpty}, ${applyCard}`).forEach((el) => {
+  gsap.utils.toArray('.apply__empty, .apply__card').forEach((el) => {
     gsap.fromTo(
       el,
       { y: 16, scale: 0.85, opacity: 0 },
@@ -421,7 +318,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
         scrollTrigger: {
           trigger: el,
           start: 'top 85%',
-          end: 'top 25%',
+          end: 'top 40%',
           scrub: true,
           immediateRender: false,
           invalidateOnRefresh: true,
@@ -431,12 +328,8 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
   });
 
   /* Faq section */
-
-  const faq = '.faq';
-  const faqContainer = '.faq__container';
-
   gsap.fromTo(
-    faqContainer,
+    '.faq__container',
     { y: 16, scale: 0.85, opacity: 0 },
     {
       y: 0,
@@ -444,9 +337,9 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
       opacity: 1,
       ease: 'power2.out',
       scrollTrigger: {
-        trigger: faq,
-        start: 'top 95%',
-        end: '+=100%',
+        trigger: '.faq',
+        start: 'top 90%',
+        end: 'top 40%',
         scrub: true,
         immediateRender: false,
         invalidateOnRefresh: true,
@@ -455,25 +348,21 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
   );
 
   // Optimization for performance
-
   gsap.set(
     [
-      fadeIn,
-      rightFadeIn,
-      zoomInFadeIn,
-      welcome,
-      welcome__plane,
-      `${luxury} > .container`,
-      luxuryPlane,
-      `${loyalty} .loyalty__top`,
-      `${loyalty} .loyalty__bottom`,
-      loyaltyPlane,
-      `${costs} ${costsBottomRight}`,
-      `${costs} ${costsBottomLeft}`,
-      costsPlane,
-      applyEmpty,
-      applyCard,
-      faqContainer,
+      '.welcome',
+      '.welcome__plane',
+      '#luxury > .container',
+      '.luxury-flights__image',
+      '.loyalty .loyalty__top',
+      '.loyalty .loyalty__bottom',
+      '.loyalty__image',
+      '.costs__bottom-left',
+      '.costs__bottom-right',
+      '.costs__image',
+      '.apply__empty',
+      '.apply__card',
+      '.faq__container',
     ],
     {
       force3D: true,
@@ -482,7 +371,6 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
     }
   );
 
-  window.addEventListener('load', () => {
-    ScrollTrigger.refresh();
-  });
+  // Ensure that the ScrollTrigger is refreshed after the content is loaded
+  window.addEventListener('load', () => ScrollTrigger.refresh());
 })();
