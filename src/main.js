@@ -6,9 +6,9 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 (function initScrollAnimations() {
   ScrollSmoother.create({
-    smooth: 1.2,
+    smooth: 1.3,
     effects: true,
-    smoothTouch: 0.25,
+    smoothTouch: 0.8,
     normalizeScroll: true,
     ignoreMobileResize: true,
     speed: 1,
